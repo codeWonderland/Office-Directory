@@ -1,0 +1,22 @@
+#contact-book {
+  width: 70%;
+  height: auto;
+  position: relative; }
+
+#book {
+  width: 90%;
+  height: auto; }
+
+#pages {
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+
+#page-1, #page-2 {
+  background-color: #c0ffee;
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+  margin: 20px; }
+
+/*# sourceMappingURL=stylesheet.css.map */
