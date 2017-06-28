@@ -2,6 +2,46 @@
 (function() {
   $(document).ready(function() {});
 
+  this.headerLines = function(header) {
+    var char, currentNewline, i, j, k, len, newline, numLines, numSpaces, spaceIndex, spacesPassed;
+    numSpaces = 0;
+    for (k = 0, len = header.length; k < len; k++) {
+      char = header[k];
+      if (char === ' ') {
+        numSpaces++;
+      }
+    }
+    currentNewline = 0;
+    numLines = 1;
+    i = 0;
+    while (i < numSpaces) {
+      newline = false;
+      j = currentNewline;
+      spaceIndex = 0;
+      spacesPassed = 0;
+      while (!newline && j < header.length) {
+        if (header[j] === ' ' && j !== (header.length - 1)) {
+          spaceIndex = j;
+          spacesPassed++;
+        }
+        if ((j - currentNewline) > (14 - 1)) {
+          currentNewline = spaceIndex + 1;
+          if (header[j] !== ' ') {
+            numLines++;
+          } else if (j !== (header.length - 1)) {
+            numLines++;
+          }
+          i += spacesPassed - 1;
+          newline = true;
+        } else {
+          j++;
+        }
+      }
+      i++;
+    }
+    return numLines;
+  };
+
 }).call(this);
 
 //# sourceMappingURL=script.js.map

@@ -1,5 +1,5 @@
 #contact-book {
-  width: 70%;
+  width: 100%;
   height: auto;
   position: relative;
 }
@@ -13,12 +13,79 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  width: 73.5%;
+  height: 85%;
 }
 
 #page-1, #page-2 {
-  background-color: #c0ffee;
-  height: 300px;
-  width: 300px;
+  height: 104%;
+  width: 37%;
   display: inline-block;
-  margin: 20px;
+  margin: 2.8%;
+  vertical-align: top;
+  position: relative;
+
+  h1, p {
+    margin: 15px;
+  }
+
+  p {
+    font-size: larger;
+  }
+
+  strong {
+    font-size: x-large;
+  }
+
+  h1 {
+    font-family: 'Bree Serif', serif;
+    font-size: 30px;
+    padding-top: 10px;
+  }
+}
+
+a.btn {
+  font-size: large!important;
+  font-weight: bolder!important;
+}
+
+#page-1 {
+  width: 40%;
+}
+
+#page-2 {
+  margin-left: 14%;
+}
+
+.dir-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.prev {
+  float: left;
+}
+
+.index, .next {
+  float: right;
+}
+
+#office-search {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('images/ace/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#office-search:focus {
+  width: 87%;
 }

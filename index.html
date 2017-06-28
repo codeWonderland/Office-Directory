@@ -6,15 +6,43 @@
     <link href="stylesheet.css" rel="stylesheet">
 </head>
 <body>
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+<form>
+    <input id="office-search" type="text" name="search" placeholder="Search..">
+</form>
 <div id="contact-book">
-    <div id="links-1"></div>
-    <img id="book" src="contact-book.png" />
+    <img id="book" src="images/ace/contact-book.png" />
     <div id="pages">
-        <div id="page-1"></div>
-        <div id="page-2"></div>
+        <div id="page-1">
+            <h1>Admissions</h1>
+            <p><strong>Location: </strong> <br />Perry Hall Welcome & Admissions Center <br/>
+                251 South Willard Street</p>
+            <p><strong>Mailing Address:</strong><br/> 163 South Willard Street<br/>
+                PO Box 670<br/>
+                Burlington, VT 05402</p>
+            <p><strong>Email: </strong><br/>
+                admission@champlain.edu</p>
+            <div class="dir-nav">
+                <a onclick="prev(this)" class="btn prev">❮ Prev</a>
+                <a onclick="toIndex()" class="btn index">Index</a>
+            </div>
+        </div>
+        <div id="page-2">
+            <p><strong>Phone: </strong><br/>
+                (802) 860-2727</p>
+            <p><strong>Toll Free:</strong><br/>
+                (800) 570-5858 </p>
+            <p><strong>Webpage:</strong><br/>
+                <a href="http://www.champlain.edu/admissions" title="A link to Champlain's admissions page" class="btn">Admissions</a></p>
+            <p><strong>Friend Us!</strong><br/>
+                <a href="apps.facebook.com/champlain" title="A link to Champlain's facebook page" class="btn">Facebook</a></p>
+            <div class="dir-nav">
+                <a onclick="next(this)" class="btn next">Next ❯</a>
+            </div>
+        </div>
     </div>
-    <div id="links-2"></div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
