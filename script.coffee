@@ -1,3 +1,8 @@
+# TODO Build js to generate index and office pages
+# TODO Add functionality to prev, next, and index buttons
+# TODO Add functionality to search bar
+# TODO Add autocompletion to search bar
+
 $(document).ready ->
   return
   

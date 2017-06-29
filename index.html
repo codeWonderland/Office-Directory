@@ -1,48 +1,536 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="stylesheet.css" rel="stylesheet">
-</head>
-<body>
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+<style>
+</style>
 <form>
     <input id="office-search" type="text" name="search" placeholder="Search..">
 </form>
 <div id="contact-book">
     <img id="book" src="images/ace/contact-book.png" />
+    <!--TODO Build index pages mockup-->
     <div id="pages">
-        <div id="page-1">
-            <h1>Admissions</h1>
-            <p><strong>Location: </strong> <br />Perry Hall Welcome & Admissions Center <br/>
-                251 South Willard Street</p>
-            <p><strong>Mailing Address:</strong><br/> 163 South Willard Street<br/>
-                PO Box 670<br/>
-                Burlington, VT 05402</p>
-            <p><strong>Email: </strong><br/>
-                admission@champlain.edu</p>
-            <div class="dir-nav">
-                <a onclick="prev(this)" class="btn prev">❮ Prev</a>
-                <a onclick="toIndex()" class="btn index">Index</a>
+        <div id="page-1"></div>
+        <div id="page-2"></div>
+    </div>
+    <!--TODO Setup database of offices-->
+    <div id="contact-list">
+        <div class="contact">
+            <p class="name">Academic Support Services</p>
+            <div class="detail">
+                <p class="line">Please see the listing under SMART Space</p>
             </div>
         </div>
-        <div id="page-2">
-            <p><strong>Phone: </strong><br/>
-                (802) 860-2727</p>
-            <p><strong>Toll Free:</strong><br/>
-                (800) 570-5858 </p>
-            <p><strong>Webpage:</strong><br/>
-                <a href="http://www.champlain.edu/admissions" title="A link to Champlain's admissions page" class="btn">Admissions</a></p>
-            <p><strong>Friend Us!</strong><br/>
-                <a href="apps.facebook.com/champlain" title="A link to Champlain's facebook page" class="btn">Facebook</a></p>
-            <div class="dir-nav">
-                <a onclick="next(this)" class="btn next">Next ❯</a>
+        <div class="contact">
+            <p class="name">Admissions</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Perry Hall Welcome & </p>
+                <p class="line">Admissions Center</p>
+                <p class="line">251 South Willard Street</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">163 South Willard Street</p>
+                <p class="line">PO Box 670</p>
+                <p class="line">Burlington, VT 05402-0670</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a class="link" href="mailto:admission@champlain.edu" title="email address for admissions">admission@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2727</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Toll Free:</p>
+                <p class="line">(800) 570-5858</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a class="btn" href="https://www.champlain.edu/admissions" title="link to champlain's admissions page">Admissions</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Friend Us!</p>
+                <a class="btn" href="https://apps.facebook.com/champlain" title="link to champlain's facebook page">Facebook</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Advancement Office</p>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 383-6620</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Toll Free:</p>
+                <p class="line">(866) 421-7170</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 860-2787</p>
+            </div>
+            <div class="detail">
+                <p class="heading">General Office Email:</p>
+                <a href="mailto:Advancement@champlain.edu" title="email address for advancement" class="link">Advancement@champlain.edu </a>
+            </div>
+            <div class="detail">
+                <p class="heading">Alumni Relations Office Email:</p>
+                <a href="mailto:Alumni@champlain.edu" title="email address for alumni relations" class="link">Alumni@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Planned Giving Office Email:</p>
+                <a href="mailto:PlannedGiving@champlain.edu" title="email address for planned giving" class="link">PlannedGiving@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Parent Fund & Programs Office Email:</p>
+                <a href="mailto:ParentPrograms@champlain.edu" title="email for parent programs" class="link">ParentPrograms@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Campaign Office Email:</p>
+                <a href="mailto:Campaign@champlain.edu" title="email for the campaign office" class="link">Campaign@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/make-a-gift/contact-advancement-office" title="advancement office webpage" class="btn">Advancement Office</a>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:acadaffairs@champlain.edu" title="email for academic affairs" class="link">acadaffairs@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/academic-information/contact-office-of-academic-affairs" title="academic affairs Webpage" class="btn">Academic Affairs</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Alumni Relations</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:alumni@champlain.edu" title="email for alumni relations" class="link">alumni@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2747</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Toll Free:</p>
+                <p class="line">(866) 421-7170</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/alumni/stay-connected" title="alumni relations Webpage" class="btn">Alumni Relations</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Bookstore</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:bkstore@champlain.edu" title="email for the bookstore" class="link">bkstore@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 863-8961</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/academic-information/champlain-campus-store" title="bookstore webpage" class="btn">Bookstore</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Campus Planning and Auxiliary Services</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Miller Center</p>
+                <p class="line">175 Lakeside Avenue</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/faculty-and-staff/campus-information/campus-planning-and-auxiliary-services" title="campus planning webpage" class="btn">Campus Planning</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Campus Public Safety</p>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 865-6465</p>
+                <p class="line">or campus ext. 6465</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/campus-services/campus-safety" title="CPS Webpage" class="btn">Campus Public Safety</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Career Collaborative</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Garden House</p>
+                <p class="line">328 Maple Street</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:careercollaborative@champlain.edu" title="career collaborative email" class="link">careercollaborative@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2720</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/career-success/career-collaborative" title="Career Collaborative Webpage" class="btn">Career Collaborative</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">CC Cash Card</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Perry Hall</p>
+                <p class="line">Enrollment Service Center</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/student-life/student-services/cash-card" title="CC Cash Card Webpage" class="btn">CC Cash Card</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Center for Learning & Technology</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Miller Information Commons</p>
+                <p class="line">95 Summit Street</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:clt@champlain.edu" title="CLT Email" class="link">clt@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/clt.champlain.edu" title="CLT Webstite" class="btn">Center for Learning & Tech</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Center for Service & Sustainability</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:centerforservice@champlain.edu" title="center for service email" class="link">centerforservice@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 383-6600</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="http://www.champlain.edu/student-life/campus-and-community-programs/center-for-service-and-sustainability" title="CSS Webpage" class="btn">Center for Service</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Champlain's Apple Store</p>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://store.apple.com/us_edu_100736" title="apple student Webpage" class="btn">Apple</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Community Standards, Office of</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:communitystandards@champlain.edu" title="community standards office email" class="link">communitystandards@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 865-6428</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/student-life-and-activities/office-of-community-standards" title="community standards office Webpage" class="btn">Community Standards</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Conference & Event Center</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:eventcenter@champlain.edu" title="conference and event center email" class="link">eventcenter@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 651-5957</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Toll Free:</p>
+                <p class="line">(866) 872-3603</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 865-5436</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">Conference and</p>
+                <p class="line">Event Center</p>
+                <p class="line">P. O. Box 670</p>
+                <p class="line">Burlington, VT 05402</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/about-champlain/professional-services/champlain-conference-and-event-center/weddings-at-champlain/contact-us-x6267" title="Conference and event center Webpage" class="btn">Conference and Event Center</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Core Division</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:core@champlain.edu" title="core email" class="link">core@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">802) 860-2753</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="http://www.champlain.edu/academics/academic-divisions/core-division" title="Core Webpage" class="btn">Core Division</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Counseling and Accommodation Services Center</p>
+            <div class="detail">
+                <p class="heading">Emergency Hours:</p>
+                <p class="line">During School Semester:</p>
+                <p class="line">M - F: 5pm - 8:30am</p>
+                <p class="line">Weekends: 24/7</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/student-life/student-services/counseling-center" title="counseling center Webpage" class="btn">Counselor Center</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Diversity and Inclusion Office:</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:diversity@champlain.edu" title="diversity office email" class="link">diversity@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2780</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 860-2783</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">163 South Willard St.</p>
+                <p class="line">PO Box 670</p>
+                <p class="line">Burlington, VT 05402</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/about-champlain/diversity-and-inclusion/office-of-diversity-and-inclusion" title="Diversity and Inclusion Webpage" class="btn">Diversity and Inclusion</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Division of Continuing Professional Studies</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:cps@champlain.edu" title="cps email" class="link">cps@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(877) 772-2265</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/academics/academic-divisions/division-of-continuing-professional-studies" title="cps webpage" class="btn">Division of CPS</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Division of Communication & Creative Media</p>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/academics/academic-divisions/division-of-communication-and-creative-media" title="ccm webpage" class="btn">Division of CCM</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Division of Education & Human Studies</p>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/academics/academic-divisions/division-of-education-and-human-studies" title="EHS Webpage" class="btn">Division of EHS</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Division of Information Technology & Sciences</p>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/academics/academic-divisions/division-of-information-technology-and-sciences" title="division of its webpage" class="btn">Division of ITS</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Dublin Campus</p>
+            <div class="detail">
+                <p class="heading">Location</p>
+                <p class="line">43 Leeson Street Lower</p>
+                <p class="line">Dublin 2</p>
+                <p class="line">Ireland</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:OIE@champlain.edu" title="dublin campus email" class="link">OIE@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/academics/international-education/champlain-abroad/champlain-abroad-dublin" title="dublin campus webpage" class="btn">Dublin Campus</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Emergent Media Center</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:emc@champlain.edu" title="emc webpage" class="link">emc@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 383-6650</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">Emergent Media Center</p>
+                <p class="line">Champlain College</p>
+                <p class="line">246 South Willard Street</p>
+                <p class="line">Burlington, VT 05401</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/centers-of-excellence/emergent-media-center" title="emc webpage" class="btn">Emergent Media Center</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Enrollment Services Center</p>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:esc@champlain.edu" title="esc email" class="link">esc@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2777</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 860-2774</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Physical Address:</p>
+                <p class="line">Perry Hall Admissions &</p>
+                <p class="line">Welcome Center</p>
+                <p class="line">First Floor</p>
+                <p class="line">251 South Willard Street</p>
+                <p class="line">Burlington, VT 05402</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">Enrollment</p>
+                <p class="line">Service Center</p>
+                <p class="line">163 South Willard Street</p>
+                <p class="line">P.O. Box 670</p>
+                <p class="line">Burlington, VT 05402</p>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Finance</p>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/faculty-and-staff/campus-information/finance" title="Finance webpage" class="btn">Finance</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Financial Aid Office</p>
+            <div class="detail">
+                <p class="heading">Location:</p>
+                <p class="line">Perry Hall Welcome &</p>
+                <p class="line">Admissions Center</p>
+                <p class="line">251 South Willard Street</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:finaid@champlain.edu" title="financial aid email" class="link">finaid@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2730</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Toll Free:</p>
+                <p class="line">(800) 570-5858</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 860-2775</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Mailing Address:</p>
+                <p class="line">163 South Willard Street</p>
+                <p class="line">Burlington, VT 05401</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/financial-aid-and-student-accounts/financial-aid" title="financial aid webpage" class="btn">Financial Aid Office</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Health & Wellness</p>
+            <div class="detail">
+                <p class="heading">Phone:</p>
+                <p class="line">(802) 860-2711</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Fax:</p>
+                <p class="line">(802) 860-2761</p>
+            </div>
+            <div class="detail">
+                <p class="heading">Email:</p>
+                <a href="mailto:healthservices@champlain.edu" title="health services email" class="link">healthservices@champlain.edu</a>
+            </div>
+            <div class="detail">
+                <p class="heading">Webpage:</p>
+                <a href="https://www.champlain.edu/current-students/campus-services/student-health-and-wellness/student-health-center" title="health and wellness webpage" class="btn">Health & Wellness</a>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="name">Human Resources</p>
+            <div class="detail">
+                <p class="line">Please see the listing</p>
+                <p class="line">under People Center.</p>
             </div>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-</body>
-</html>
+<!--Example page-1
+<h1>Admissions</h1>
+    <p><strong>Location: </strong> <br />Perry Hall Welcome & Admissions Center <br/>
+        251 South Willard Street</p>
+    <p><strong>Mailing Address:</strong><br/> 163 South Willard Street<br/>
+        PO Box 670<br/>
+        Burlington, VT 05402</p>
+    <p><strong>Email: </strong><br/>
+        admission@champlain.edu</p>
+    <div class="dir-nav">
+        <a onclick="prev(this)" class="btn prev">❮ Prev</a>
+        <a onclick="toIndex()" class="btn index">Index</a>
+    </div>
+-->
+
+<!--Example page-2
+<p><strong>Phone: </strong><br/>
+    (802) 860-2727</p>
+<p><strong>Toll Free:</strong><br/>
+    (800) 570-5858 </p>
+<p><strong>Webpage:</strong><br/>
+    <a href="https://www.champlain.edu/admissions" title="A link to Champlain's admissions page" class="btn">Admissions</a></p>
+<p><strong>Friend Us!</strong><br/>
+    <a href="https://apps.facebook.com/champlain" title="A link to Champlain's facebook page" class="btn">Facebook</a></p>
+<div class="dir-nav">
+    <a onclick="next(this)" class="btn next">Next ❯</a>
+</div>
+-->
