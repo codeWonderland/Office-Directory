@@ -4,6 +4,7 @@
 # TODO Add autocompletion to search bar
 
 $(document).ready ->
+  setPage(0)
   return
 
 @setPage = (pageIndex) ->
@@ -47,10 +48,11 @@ $(document).ready ->
     i++
     
   # add navigation
-  document.getElementById('page-1').innerHTML += '<div class="dir-nav">'
-  if pageIndex isnt "0"
-    document.getElementById('page-1').innerHTML += '<a onclick="prev()" class="btn prev">❮ Prev</a>'
-  document.getElementById('page-1').innerHTML += '<a onclick="toIndex()" class="btn index">Index</a></div>'
+  navHTML = '<div class="dir-nav">'
+  if pageIndex isnt 0
+    navHTML += '<a onclick="prev()" class="btn prev">❮ Prev</a>'
+  navHTML += '<a onclick="toIndex()" class="btn index">Index</a></div>'
+  document.getElementById('page-1').innerHTML += navHTML
   
   if pageIndex isnt (contactList.getElementsByClassName('contact').length - 1)
     document.getElementById('page-2').innerHTML += '<div class="dir-nav">' +
@@ -65,6 +67,9 @@ $(document).ready ->
   
 @prev = () ->
   setPage(parseInt(document.getElementById('page-1').getElementsByTagName('h1')[0].getAttribute('data-index')) - 1)
+  return
+  
+@toIndex = () ->
   return
 
 @generateDetailHTML = (detail) ->
