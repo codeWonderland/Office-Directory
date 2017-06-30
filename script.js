@@ -2,6 +2,102 @@
 (function() {
   $(document).ready(function() {});
 
+  this.setPage = function(pageIndex) {
+    var contact, contactList, counter, details, done, i, lines, maxLines, pLength, pages;
+    contactList = document.getElementById('contact-list');
+    if (pageIndex >= contactList.length) {
+      pageIndex = contactList.length - 1;
+    }
+    contact = contactList.getElementsByClassName('contact')[pageIndex];
+    pages = document.getElementById('pages');
+    maxLines = 16;
+    maxLines -= (headerLines(contact.getElementsByClassName('name')[0].innerHTML) - 1) * 2;
+    details = contact.getElementsByClassName('detail');
+    counter = 0;
+    lines = 0;
+    done = false;
+    while (!done && counter !== details.length) {
+      pLength = (details[counter].getElementsByClassName('heading').length * 3) + details[counter].getElementsByClassName('line').length + details[counter].getElementsByClassName('link').length + (details[counter].getElementsByClassName('btn').length * 2);
+      if (lines + pLength < maxLines) {
+        lines += pLength;
+        counter++;
+      } else {
+        done = true;
+      }
+    }
+    i = 0;
+    document.getElementById('page-1').innerHTML = '<h1 data-index="' + pageIndex + '">' + contact.getElementsByClassName('name')[0].innerHTML + '</h1>';
+    document.getElementById('page-2').innerHTML = "";
+    while (i < counter) {
+      document.getElementById('page-1').innerHTML += generateDetailHTML(details[i]);
+      i++;
+    }
+    while (i < details.length) {
+      document.getElementById('page-2').innerHTML += generateDetailHTML(details[i]);
+      i++;
+    }
+    document.getElementById('page-1').innerHTML += '<div class="dir-nav">';
+    if (pageIndex !== "0") {
+      document.getElementById('page-1').innerHTML += '<a onclick="prev()" class="btn prev">❮ Prev</a>';
+    }
+    document.getElementById('page-1').innerHTML += '<a onclick="toIndex()" class="btn index">Index</a></div>';
+    if (pageIndex !== (contactList.getElementsByClassName('contact').length - 1)) {
+      document.getElementById('page-2').innerHTML += '<div class="dir-nav">' + '<a onclick="next()" class="btn next">Next ❯</a>' + '</div>';
+    }
+  };
+
+  this.next = function() {
+    setPage(parseInt(document.getElementById('page-1').getElementsByTagName('h1')[0].getAttribute('data-index')) + 1);
+  };
+
+  this.prev = function() {
+    setPage(parseInt(document.getElementById('page-1').getElementsByTagName('h1')[0].getAttribute('data-index')) - 1);
+  };
+
+  this.generateDetailHTML = function(detail) {
+    var detailHTML, j;
+    detailHTML = '<p>';
+    if (detail.getElementsByClassName('heading').length) {
+      detailHTML += '<strong>' + detail.getElementsByClassName('heading')[0].innerHTML + '</strong><br/>';
+    }
+    if (detail.getElementsByClassName('line').length) {
+      j = 0;
+      while (j < detail.getElementsByClassName('line').length) {
+        detailHTML += detail.getElementsByClassName('line')[j].innerHTML;
+        if (j !== detail.getElementsByClassName('line').length - 1) {
+          detailHTML += '<br/>';
+        }
+        j++;
+      }
+    }
+    if (detail.getElementsByClassName('link').length) {
+      j = 0;
+      while (j < detail.getElementsByClassName('link').length) {
+        detailHTML += '<a href="' + detail.getElementsByClassName('link')[j].getAttribute('href') + '" title="' + detail.getElementsByClassName('link')[j].getAttribute('title') + '" class="link">';
+        detailHTML += detail.getElementsByClassName('link')[j].innerHTML;
+        detailHTML += '</a>';
+        if (j !== detail.getElementsByClassName('link').length - 1) {
+          detailHTML += '<br/>';
+        }
+        j++;
+      }
+    }
+    if (detail.getElementsByClassName('btn').length) {
+      j = 0;
+      while (j < detail.getElementsByClassName('btn').length) {
+        detailHTML += '<a href="' + detail.getElementsByClassName('btn')[j].getAttribute('href') + '" title="' + detail.getElementsByClassName('btn')[j].getAttribute('title') + '" class="btn">';
+        detailHTML += detail.getElementsByClassName('btn')[j].innerHTML;
+        detailHTML += '</a>';
+        if (j !== detail.getElementsByClassName('btn').length - 1) {
+          detailHTML += '<br/>';
+        }
+        j++;
+      }
+    }
+    detailHTML += '</p>';
+    return detailHTML;
+  };
+
   this.headerLines = function(header) {
     var char, currentNewline, i, j, k, len, newline, numLines, numSpaces, spaceIndex, spacesPassed;
     numSpaces = 0;
@@ -24,7 +120,7 @@
           spaceIndex = j;
           spacesPassed++;
         }
-        if ((j - currentNewline) > (14 - 1)) {
+        if ((j - currentNewline) > (15 - 1)) {
           currentNewline = spaceIndex + 1;
           if (header[j] !== ' ') {
             numLines++;

@@ -86,6 +86,10 @@ a.btn {
   transition: width 0.4s ease-in-out;
 }
 
+#contact-list {
+  display: none;
+}
+
 #office-search:focus {
   width: 87%;
 }
