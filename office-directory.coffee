@@ -46,7 +46,7 @@ $(document).ready ->
   while i < details.length
     document.getElementById('page-2').innerHTML += generateDetailHTML(details[i])
     i++
-    
+  
   # add navigation
   navHTML = '<div class="dir-nav">'
   if pageIndex isnt 0
@@ -56,19 +56,19 @@ $(document).ready ->
   
   if pageIndex isnt (contactList.getElementsByClassName('contact').length - 1)
     document.getElementById('page-2').innerHTML += '<div class="dir-nav">' +
-      '<a onclick="next()" class="btn next">Next ❯</a>' +
-      '</div>'
+        '<a onclick="next()" class="btn next">Next ❯</a>' +
+        '</div>'
   
   return
 
 @next = () ->
   setPage(parseInt(document.getElementById('page-1').getElementsByTagName('h1')[0].getAttribute('data-index')) + 1)
   return
-  
+
 @prev = () ->
   setPage(parseInt(document.getElementById('page-1').getElementsByTagName('h1')[0].getAttribute('data-index')) - 1)
   return
-  
+
 @toIndex = () ->
   return
 
@@ -113,7 +113,7 @@ $(document).ready ->
   # close out detail
   detailHTML += '</p>'
   return detailHTML
-  
+
 @headerLines = (header) ->
   numSpaces = 0
   
@@ -121,7 +121,7 @@ $(document).ready ->
   for char in header
     if char is ' '
       numSpaces++
-      
+  
   currentNewline = 0
   # the number of words is equal to the number of spaces between words(numSpaces) + 1
   numLines = 1
@@ -136,13 +136,13 @@ $(document).ready ->
     
     # while we haven't hit a new line and we haven't reached the end of the header
     while not newline and j < header.length
-      # if we hit a space and it isn't the last character in the header
-      # we want to index this space's location and add 1 to the amount of spaces we have hit since the newline
+# if we hit a space and it isn't the last character in the header
+# we want to index this space's location and add 1 to the amount of spaces we have hit since the newline
       if header[j] is ' ' and j isnt (header.length - 1)
         spaceIndex = j
         spacesPassed++
-        
-      # if we reach the max line length we want to make the newline index equal to the index of the last 
+      
+      # if we reach the max line length we want to make the newline index equal to the index of the last
       # space plus 1 (spaces won't take up room at the beginning of a line)
       if (j - currentNewline) > (15 - 1) # minus 1 because we index at 0
         currentNewline = spaceIndex + 1
@@ -158,7 +158,7 @@ $(document).ready ->
         i += spacesPassed - 1
         # this would also mark a new line so we want to end the while loop
         newline = true
-      # in the event we didn't pass the number of characters allowed, we increase the index and continue testing
+# in the event we didn't pass the number of characters allowed, we increase the index and continue testing
       else
         j++
     i++
