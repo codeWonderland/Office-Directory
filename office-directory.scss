@@ -63,6 +63,15 @@ a.btn {
   width: 100%;
 }
 
+div#pages.index li {
+  list-style: none!important;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-top: 1px solid lightgrey;
+  padding-top: 11px;
+  padding-left: 13px;
+}
+
 .prev {
   float: left;
 }
@@ -78,7 +87,7 @@ a.btn {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url('images/ace/searchicon.png');
+  background-image: url('https://www.champlain.edu/images/ace/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
@@ -91,5 +100,17 @@ a.btn {
 }
 
 #office-search:focus {
-  width: 87%;
+  width: 325%;
+}
+
+@media only screen and (max-width: 768px) {
+  #office-search, #contact-book {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-dir {
+    display: none;
+  }
 }
