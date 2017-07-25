@@ -25,12 +25,16 @@
     margin: 15px; }
   #page-1 p, #page-2 p {
     font-size: larger; }
+    #page-1 p a.btn, #page-2 p a.btn {
+      background-color: #236192 !important;
+      border-color: #236192 !important; }
   #page-1 strong, #page-2 strong {
     font-size: x-large; }
   #page-1 h1, #page-2 h1 {
     font-family: 'Bree Serif', serif;
     font-size: 30px;
-    padding-top: 10px; }
+    padding-top: 10px;
+    margin-right: 0; }
 
 a.btn {
   font-size: large !important;
@@ -61,6 +65,9 @@ div#pages.index li {
 .index, .next {
   float: right; }
 
+li a {
+  cursor: pointer; }
+
 #office-search {
   width: 130px;
   box-sizing: border-box;
@@ -68,10 +75,10 @@ div#pages.index li {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
+  padding: 12px 20px 12px 40px;
   background-image: url("https://www.champlain.edu/images/ace/searchicon.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out; }
 

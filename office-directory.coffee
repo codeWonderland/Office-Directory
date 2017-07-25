@@ -250,7 +250,7 @@ $(document).ready ->
       
       # if we reach the max line length we want to make the newline index equal to the index of the last
       # space plus 1 (spaces won't take up room at the beginning of a line)
-      if (j - currentNewline) > (30 - 1) # minus 1 because we index at 0
+      if (j - currentNewline) > (32 - 1) # minus 1 because we index at 0
         currentNewline = spaceIndex + 1
         # we also want to add one to the number of lines so far
         # however if this character is a space and there is nothing after it we don't want to add a new line

@@ -240,7 +240,7 @@
           spaceIndex = j;
           spacesPassed++;
         }
-        if ((j - currentNewline) > (30 - 1)) {
+        if ((j - currentNewline) > (32 - 1)) {
           currentNewline = spaceIndex + 1;
           if (header[j] !== ' ') {
             numLines++;
